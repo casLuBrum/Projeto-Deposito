@@ -34,5 +34,28 @@ namespace Controller
             }
             return null;
         }
+
+        public Produto Detalhes(int id)
+        {
+            return BuscaPorID(id);
+        }
+
+        public void Editar(int id, Cliente novoCli, string novoNome, double novoPeso, int novaQuant)
+        {
+            Produto prod = BuscaPorID(id);
+
+            if(prod != null)
+            {
+                prod.ClienteID = novoCli;
+                prod.Nome = novoNome;
+                prod.Peso = novoPeso;
+                prod.Quantidade = novaQuant;
+            }
+        }
+
+        public List<Produto> Listar()
+        {
+            return listaProdutos;
+        }
     }
 }
