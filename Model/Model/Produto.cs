@@ -8,7 +8,8 @@ namespace Model
 {
     class Produto
     {
-        public string Codigo { get; set; }
+        public int ProdutoID { get; set; }
+        public int ClienteID { get; set; }
         public string Nome { get; set; }
         public double Peso { get; set; }
         public int Quantidade { get; set; }
