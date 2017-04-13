@@ -4,58 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using Model.DAL;
 
 namespace Controller
 {
     class ProdutoController
     {
-        private static List<Produto> listaProdutos = new List<Produto>();
-
-        public void Adicionar(Cliente cliID, string nome, double peso, int quant)
+        public static void AdicionarProduto(Produto prod)
         {
-            Produto prod = new Produto();
-            prod.ProdutoID = listaProdutos.Count + 1;
-            prod.ClienteID = cliID;
-            prod.Nome = nome;
-            prod.Peso = peso;
-            prod.Quantidade = quant;
-
-            listaProdutos.Add(prod);
+            using (Contexto ctx = new Contexto())
+            {
+                ctx.Produtos.Add(prod);
+                ctx.SaveChanges();
+            }
         }
 
-        private Produto BuscaPorID(int id)
+        private static Produto BuscarProdutoPorID(int id, Contexto ctx)
         {
-            foreach (Produto prod in listaProdutos)
+            return ctx.Produtos.Find(id);
+        }
+
+        public static void EditarProduto(int id, Produto novosDadosProd)
+        {
+            using (Contexto ctx = new Contexto())
             {
-                if (prod.ProdutoID == id)
+                Produto dadosAntigosProduto = BuscarProdutoPorID(id, ctx);
+
+                if (dadosAntigosProduto != null)
                 {
-                    return prod;
+                    dadosAntigosProduto.Nome = novosDadosProd.Nome;
+                    dadosAntigosProduto.Peso = novosDadosProd.Peso;
+                    dadosAntigosProduto.Quantidade = novosDadosProd.Quantidade;
+
+                    ctx.Entry(dadosAntigosProduto).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
                 }
             }
-            return null;
         }
 
-        public Produto Detalhes(int id)
+        public static void Excluir(int id)
         {
-            return BuscaPorID(id);
-        }
-
-        public void Editar(int id, Cliente novoCli, string novoNome, double novoPeso, int novaQuant)
-        {
-            Produto prod = BuscaPorID(id);
-
-            if(prod != null)
+            using (Contexto ctx = new Contexto())
             {
-                prod.ClienteID = novoCli;
-                prod.Nome = novoNome;
-                prod.Peso = novoPeso;
-                prod.Quantidade = novaQuant;
-            }
-        }
+                Produto prod = BuscarProdutoPorID(id, ctx);
 
-        public List<Produto> Listar()
-        {
-            return listaProdutos;
+                if(prod != null)
+                {
+                    ctx.Entry(prod).State = System.Data.Entity.EntityState.Deleted;
+                    ctx.SaveChanges();
+                }
+            }
         }
     }
 }
