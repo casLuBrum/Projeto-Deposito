@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <Button Content="Salvar" HorizontalAlignment="Left" Margin="94,222,0,0" VerticalAlignment="Top" Width="109" Click="Salvar"/>
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="23" Margin="44,97,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top" Width="211" TextChanged="Nome_text"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="44,157,0,0" TextWrapping="Wrap" Text="CPF" VerticalAlignment="Top" Width="211" TextChanged="cpf_text"/>
+        <Label x:Name="Cadastro" Content="Cadastro Cliente" HorizontalAlignment="Left" Margin="91,24,0,0" VerticalAlignment="Top" Width="104" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic"/>
+
     </Grid>
 </UserControl>

@@ -4,61 +4,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using Model.DAL;
 
 namespace Controller
 {
     public class ClienteController
     {
-        private static List<Cliente> listaCliente = new List<Cliente>();
-        public void Adicionar(string Nome, string CPF)
-        {
-            Cliente cli = new Cliente();
-            cli.ClienteID = listaCliente.Count + 1;
-            cli.Nome = Nome;
-            cli.CPF = CPF;
 
-            listaCliente.Add(cli);
-            
-        }
-
-        private Cliente BuscarPorID(int ID)
+        public void AdicionarCliente(Cliente cli)
         {
-            foreach ( Cliente cli in listaCliente)
+            using (Contexto ctx = new Contexto())
             {
-                if(cli.ClienteID == ID)
-                {
-                    return cli;
-                }
+                ctx.Clientes.Add(cli);
+                ctx.SaveChanges();
+
             }
-            return null;
-        }
-        public Cliente Detalhes(int ID)
-        {
-            return BuscarPorID(ID);
-        }
-        public void Editar(int ID, string novoNome , string novoCPF)
-        {
-            Cliente C = BuscarPorID(ID);
 
-            if( C != null)
-            {
-                C.Nome = novoNome;
-                C.CPF = novoCPF;
-            }
         }
-        public void Excluir(int ID)
+
+        private static Cliente BuscarClientePorID(int id, Contexto ctx)
         {
-            foreach(Cliente cli in listaCliente)
+            return ctx.Clientes.Find(id);
+        }
+
+        public static void EditarCliente(int id, Cliente novosDadosCli)
+        {
+            using (Contexto ctx = new Contexto())
             {
-                if(cli.ClienteID == ID)
+                Cliente dadosAntigoCliente = BuscarClientePorID(id, ctx);
+                if (dadosAntigoCliente != null)
                 {
-                    listaCliente.Remove(cli);
+                    dadosAntigoCliente.Nome = novosDadosCli.Nome;
+                    dadosAntigoCliente.CPF = novosDadosCli.CPF;
+
+                    ctx.Entry(dadosAntigoCliente).State = System.Data.Entity.EntityState.Modified;
+                    ctx.SaveChanges();
                 }
             }
         }
-        public List<Cliente> Listar()
+        public static void Excluir(int id)
         {
-            return listaCliente;
+            using (Contexto ctx = new Contexto())
+            {
+                Cliente cli = BuscarClientePorID(id, ctx);
+                if (cli != null)
+                {
+                    ctx.Entry(cli).State = System.Data.Entity.EntityState.Deleted;
+                    ctx.SaveChanges();
+                }
+            }
         }
+
+
+
     }
 }

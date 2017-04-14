@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Model;
+using Controller;
 
 namespace View
 {
@@ -23,6 +25,15 @@ namespace View
         public wpfCliente()
         {
             InitializeComponent();
+        }
+
+        private void Salvar(object sender, RoutedEventArgs e)
+        {
+            Cliente c = new Cliente();
+            c.Nome = Nome_text;
+            c.CPF = Cpf_text;
+
+            ClienteController.Salvar(c);
         }
     }
 }
