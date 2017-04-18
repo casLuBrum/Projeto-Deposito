@@ -12,7 +12,6 @@ namespace Model
         [Key]
         public int ProdutoID { get; set; }
 
-        [Required]
         public Cliente ClienteID { get; set; }
 
         [Required, StringLength(30)]

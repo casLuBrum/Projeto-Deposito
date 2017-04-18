@@ -8,12 +8,28 @@ using Model.DAL;
 
 namespace Controller
 {
-    class ProdutoController
+    public class ProdutoController : ClienteController
     {
-        public static void AdicionarProduto(Produto prod)
+        public static bool ValidarProd(int id)
         {
             using (Contexto ctx = new Contexto())
             {
+                Cliente cli = BuscarClientePorID(id, ctx);
+                if(cli.ClienteID == id)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static void SalvarProduto(Produto prod)
+        {
+            using (Contexto ctx = new Contexto())
+            {                
                 ctx.Produtos.Add(prod);
                 ctx.SaveChanges();
             }
@@ -42,7 +58,7 @@ namespace Controller
             }
         }
 
-        public static void Excluir(int id)
+        public static void ExcluirProduto(int id)
         {
             using (Contexto ctx = new Contexto())
             {

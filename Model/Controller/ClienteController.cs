@@ -11,18 +11,16 @@ namespace Controller
     public class ClienteController
     {
 
-        public void AdicionarCliente(Cliente cli)
+        public static void Salvar(Cliente cli)
         {
             using (Contexto ctx = new Contexto())
             {
                 ctx.Clientes.Add(cli);
                 ctx.SaveChanges();
-
             }
-
         }
 
-        private static Cliente BuscarClientePorID(int id, Contexto ctx)
+        public static Cliente BuscarClientePorID(int id, Contexto ctx)
         {
             return ctx.Clientes.Find(id);
         }
