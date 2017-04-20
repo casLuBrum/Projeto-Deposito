@@ -53,7 +53,13 @@ namespace Controller
             }
         }
 
-
+       public static String Listar()
+        {
+            using (Contexto ctx = new Contexto())
+            {
+                return ctx.Clientes.ToString();
+            }
+        }
 
     }
 }

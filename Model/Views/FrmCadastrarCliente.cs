@@ -14,9 +14,15 @@ namespace Views
 {
     public partial class FrmCadastrarCliente : Form
     {
-        public FrmCadastrarCliente()
+        public int? ClienteID { get; set; }
+        public Cliente _Cliente { get; set; }
+
+        public FrmCadastrarCliente(int? idCliente)
         {
             InitializeComponent();
+
+            if (idCliente.HasValue)
+                ClienteID = idCliente;
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)

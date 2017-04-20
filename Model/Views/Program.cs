@@ -17,7 +17,7 @@ namespace Views
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCadastrarCliente());
+            Application.Run(new TelaInicial());
         }
     }
 }

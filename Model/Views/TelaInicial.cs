@@ -16,5 +16,19 @@ namespace Views
         {
             InitializeComponent();
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCadastrarCliente cadCliente = new FrmCadastrarCliente(null);
+            cadCliente.MdiParent = this;
+            cadCliente.Show();
+        }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListarClientes listCliente = new FrmListarClientes();
+            listCliente.MdiParent = this;
+            listCliente.Show();
+        }
     }
 }
