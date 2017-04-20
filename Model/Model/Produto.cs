@@ -12,15 +12,17 @@ namespace Model
         [Key]
         public int ProdutoID { get; set; }
 
+        [Required]
         public Cliente ClienteID { get; set; }
+        public virtual Cliente _Cliente { get; set; }
 
         [Required, StringLength(30)]
         public string Nome { get; set; }
 
-        [Required, StringLength(10)]
+        [Required]
         public double Peso { get; set; }
 
-        [Required, StringLength(10)]
+        [Required]
         public int Quantidade { get; set; }
     }
 }
