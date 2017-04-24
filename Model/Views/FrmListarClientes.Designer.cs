@@ -45,16 +45,18 @@
             this.dgv_Clientes.Name = "dgv_Clientes";
             this.dgv_Clientes.Size = new System.Drawing.Size(416, 199);
             this.dgv_Clientes.TabIndex = 0;
-           // this.dgv_Clientes.SelectionChanged += new System.EventHandler(this.dgv_Clientes_SelectionChanged);
+            this.dgv_Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Clientes_CellContentClick);
             // 
             // Nome
             // 
+            this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             // 
             // Cpf
             // 
+            this.Cpf.DataPropertyName = "Cpf";
             this.Cpf.HeaderText = "CPF";
             this.Cpf.Name = "Cpf";
             // 

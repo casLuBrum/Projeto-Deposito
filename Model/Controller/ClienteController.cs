@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Model.DAL;
+using System.Data.Entity;
 
 namespace Controller
 {
@@ -25,19 +26,24 @@ namespace Controller
             return ctx.Clientes.Find(id);
         }
 
-        public static void EditarCliente(int id, Cliente novosDadosCli)
+        public Cliente Detalhes(int id)
         {
             using (Contexto ctx = new Contexto())
             {
-                Cliente dadosAntigoCliente = BuscarClientePorID(id, ctx);
-                if (dadosAntigoCliente != null)
-                {
-                    dadosAntigoCliente.Nome = novosDadosCli.Nome;
-                    dadosAntigoCliente.CPF = novosDadosCli.CPF;
+                return BuscarClientePorID(id, ctx);
+            }
+        }
 
-                    ctx.Entry(dadosAntigoCliente).State = System.Data.Entity.EntityState.Modified;
-                    ctx.SaveChanges();
-                }
+        public void EditarCliente(int id, string novoNome, string novoCpf)
+        {
+            using (Contexto ctx = new Contexto())
+            {
+                Cliente cliente = BuscarClientePorID(id, ctx);
+                cliente.Nome = novoNome;
+                cliente.CPF = novoCpf;
+
+                ctx.Entry(cliente).State = System.Data.Entity.EntityState.Modified;
+                ctx.SaveChanges();
             }
         }
         public static void Excluir(int id)
@@ -53,11 +59,13 @@ namespace Controller
             }
         }
 
-       public static String Listar()
+       public List<Cliente> Listar()
         {
             using (Contexto ctx = new Contexto())
             {
-                return ctx.Clientes.ToString();
+                List<Cliente> retornaCliente = new List<Cliente>();
+                retornaCliente = ctx.Clientes.ToList();
+                return retornaCliente;
             }
         }
 

@@ -8,23 +8,23 @@ using Model.DAL;
 
 namespace Controller
 {
-    public class ProdutoController : ClienteController
+    public class ProdutoController
     {
-        public static bool ValidarProd(int id)
-        {
-            using (Contexto ctx = new Contexto())
-            {
-                Cliente cli = BuscarClientePorID(id, ctx);
-                if(cli.ClienteID == id)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        //public static bool ValidarProd(int id)
+        //{
+            //using (Contexto ctx = new Contexto())
+            //{
+                //Cliente cli = BuscarClientePorID(id, ctx);
+                //if(cli.ClienteID == id)
+                //{
+                  //  return true;
+                //}
+                //else
+                //{
+                  //  return false;
+                //}
+            //}
+        //}
 
         public static void SalvarProduto(Produto prod)
         {
