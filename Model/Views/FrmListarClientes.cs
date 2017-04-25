@@ -24,9 +24,9 @@ namespace Views
             CarregarGridViewClientes();
         }
 
-        private void CarregarGridViewClientes()
+        public void CarregarGridViewClientes()
         {
-            dgv_Clientes.DataSource = null;
+            //dgv_Clientes.DataSource = null;
 
             ClienteController cliContr = new ClienteController();
             
@@ -44,10 +44,11 @@ namespace Views
                 FrmDetalhesCleinte telaDetalhes = new FrmDetalhesCleinte(idSelecionado);
 
                 //FrmCadastrarCliente cadCliente = new FrmCadastrarCliente(idSelecionado);
-                
+
                 //cadCliente.ShowDialog();
 
-                //CarregarGridViewClientes();
+                CarregarGridViewClientes();
+                
             }
         }
 

@@ -30,5 +30,12 @@ namespace Views
             listCliente.MdiParent = this;
             listCliente.Show();
         }
+
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmCadastrarProduto cadProd = new FrmCadastrarProduto(null);
+            cadProd.MdiParent = this;
+            cadProd.Show();
+        }
     }
 }

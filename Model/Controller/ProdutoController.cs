@@ -10,23 +10,9 @@ namespace Controller
 {
     public class ProdutoController
     {
-        //public static bool ValidarProd(int id)
-        //{
-            //using (Contexto ctx = new Contexto())
-            //{
-                //Cliente cli = BuscarClientePorID(id, ctx);
-                //if(cli.ClienteID == id)
-                //{
-                  //  return true;
-                //}
-                //else
-                //{
-                  //  return false;
-                //}
-            //}
-        //}
+       
 
-        public static void SalvarProduto(Produto prod)
+        public static void Salvar(Produto prod)
         {
             using (Contexto ctx = new Contexto())
             {                
@@ -50,7 +36,6 @@ namespace Controller
                 {
                     dadosAntigosProduto.Nome = novosDadosProd.Nome;
                     dadosAntigosProduto.Peso = novosDadosProd.Peso;
-                    dadosAntigosProduto.Quantidade = novosDadosProd.Quantidade;
 
                     ctx.Entry(dadosAntigosProduto).State = System.Data.Entity.EntityState.Modified;
                     ctx.SaveChanges();

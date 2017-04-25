@@ -37,8 +37,8 @@ namespace Views
 
         private void CarregarFormulario()
         {
-            if (ClienteID.HasValue)
-            { 
+            //if (ClienteID.HasValue)
+            //{ 
                 ClienteController cliContr = new ClienteController();
                 _Cliente = cliContr.Detalhes(ClienteID.Value);
                 if (_Cliente != null)
@@ -47,11 +47,11 @@ namespace Views
                     cpf_txt.Text = _Cliente.CPF;
                     btn_salvar.Text = "Atualizar";
                 }
-            }
-            else
-            {
-                LimparCampos();
-            }
+            //}
+            //else
+            //{
+              //  LimparCampos();
+            //}
         }
 
         private bool Validar()
@@ -67,11 +67,13 @@ namespace Views
                 {
                     if (ClienteID.HasValue)
                     {
+                        
                         ClienteController cliContr = new ClienteController();
                         cliContr.EditarCliente(ClienteID.Value, nome_txt.Text, cpf_txt.Text);
+                        
 
                         MessageBox.Show("Cliente alterado com sucesso");
-                        LimparCampos();
+                        
                         this.Close();
                     }
                     else
@@ -84,6 +86,7 @@ namespace Views
                         ClienteController.Salvar(c);
 
                         MessageBox.Show("Salvo com sucesso!");
+                        LimparCampos();
                     }
                 }
                 else

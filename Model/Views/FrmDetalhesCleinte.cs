@@ -53,6 +53,7 @@ namespace Views
             ClienteController.Excluir(ClienteID);
 
             MessageBox.Show("Cliente excluido com sucesso !");
+
             this.Close();
         }
     }
