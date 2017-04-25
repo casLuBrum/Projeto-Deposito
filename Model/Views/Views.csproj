@@ -67,6 +67,12 @@
     <Compile Include="FrmCadastrarProduto.Designer.cs">
       <DependentUpon>FrmCadastrarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDetalhesCleinte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetalhesCleinte.Designer.cs">
+      <DependentUpon>FrmDetalhesCleinte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListarClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastrarProduto.resx">
       <DependentUpon>FrmCadastrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetalhesCleinte.resx">
+      <DependentUpon>FrmDetalhesCleinte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListarClientes.resx">
       <DependentUpon>FrmListarClientes.cs</DependentUpon>

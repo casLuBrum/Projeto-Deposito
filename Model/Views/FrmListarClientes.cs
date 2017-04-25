@@ -41,13 +41,13 @@ namespace Views
             if (((DataGridView)sender).SelectedRows.Count > 0)
             {
                 int idSelecionado = Convert.ToInt32(((DataGridView)sender).SelectedRows[0].Cells[0].Value);
-               
+                FrmDetalhesCleinte telaDetalhes = new FrmDetalhesCleinte(idSelecionado);
 
-                FrmCadastrarCliente cadCliente = new FrmCadastrarCliente(idSelecionado);
+                //FrmCadastrarCliente cadCliente = new FrmCadastrarCliente(idSelecionado);
                 
-                cadCliente.ShowDialog();
+                //cadCliente.ShowDialog();
 
-                CarregarGridViewClientes();
+                //CarregarGridViewClientes();
             }
         }
 
