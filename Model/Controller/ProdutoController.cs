@@ -56,5 +56,16 @@ namespace Controller
                 }
             }
         }
+
+        public List<Produto> Listar()
+        {
+            using(Contexto ctx = new Contexto())
+            {
+                List<Produto> retornaProdutos = new List<Produto>();
+                retornaProdutos = ctx.Produtos.ToList();
+                return retornaProdutos;
+            }
+        }
+
     }
 }

@@ -37,5 +37,12 @@ namespace Views
             cadProd.MdiParent = this;
             cadProd.Show();
         }
+
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmListarProdutos listProd = new FrmListarProdutos();
+            listProd.MdiParent = this;
+            listProd.Show();
+        }
     }
 }

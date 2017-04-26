@@ -36,6 +36,7 @@
             this.cadastrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.armazemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,8 @@
             // itensToolStripMenuItem
             // 
             this.itensToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem1});
+            this.cadastrarToolStripMenuItem1,
+            this.listarToolStripMenuItem1});
             this.itensToolStripMenuItem.Name = "itensToolStripMenuItem";
             this.itensToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.itensToolStripMenuItem.Text = "Itens";
@@ -102,6 +104,13 @@
             this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
             this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
             this.buscarToolStripMenuItem2.Text = "Buscar";
+            // 
+            // listarToolStripMenuItem1
+            // 
+            this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.listarToolStripMenuItem1.Text = "Listar";
+            this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 
             // TelaInicial
             // 
@@ -130,5 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem armazemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
     }
 }
