@@ -17,5 +17,9 @@ namespace Model
 
         public int ProdutoID { get; set; }
         public virtual Produto _Produto { get; set; }
+
+        public int Prateleira { get; set; }
+
+        public int Coluna { get; set; }
     }
 }

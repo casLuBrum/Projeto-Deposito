@@ -14,10 +14,19 @@ namespace Views
 {
     public partial class FrmArmazenar1 : Form
     {
+        public int idSelecCliente { get; set; }
+        public int idSelecItem { get; set; }
+
         public FrmArmazenar1()
         {
             InitializeComponent();
             
+        }
+
+        public void LimparCampos()
+        {
+            Prateleira_txt.Clear();
+            Coluna_txt.Clear();
         }
 
         public void CarregarCbClientes()
@@ -38,7 +47,6 @@ namespace Views
 
             cb_Itens.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_Itens.DataSource = prodContr.Listar();
-            cb_Itens.ValueMember = "ProdutoID";
             cb_Itens.DisplayMember = "Nome";
             cb_Itens.Update();
         }
@@ -47,6 +55,34 @@ namespace Views
         {
             CarregarCbClientes();
             CarregarCbItens();
+        }
+
+        private void cb_Itens_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cb_Itens.SelectedIndex > 0)
+            idSelecItem = Convert.ToInt32(cb_Itens.SelectedValue);
+        }
+
+        private void cb_Cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_Cliente.SelectedIndex > 0)
+            {
+                idSelecCliente = Convert.ToInt32(cb_Cliente.SelectedValue);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Armazenar armazenou = new Armazenar();
+            armazenou.ClienteID = idSelecCliente;
+            armazenou.ProdutoID = idSelecItem;
+            armazenou.Prateleira = Int32.Parse(Prateleira_txt.Text);
+            armazenou.Coluna = Int32.Parse(Coluna_txt.Text);
+
+            ArmazenarController.Salvar(armazenou);
+
+            MessageBox.Show("Item Armazenado com sucesso");
+            LimparCampos();
         }
     }
 }
