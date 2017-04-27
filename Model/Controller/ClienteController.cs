@@ -63,9 +63,8 @@ namespace Controller
         {
             using (Contexto ctx = new Contexto())
             {
-                List<Cliente> retornaCliente = new List<Cliente>();
-                retornaCliente = ctx.Clientes.ToList();
-                return retornaCliente;
+                
+                return ctx.Clientes.ToList(); ;
             }
         }
 

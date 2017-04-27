@@ -44,5 +44,12 @@ namespace Views
             listProd.MdiParent = this;
             listProd.Show();
         }
+
+        private void armazenarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmArmazenar1 armazemar = new FrmArmazenar1();
+            armazemar.MdiParent = this;
+            armazemar.Show();
+        }
     }
 }

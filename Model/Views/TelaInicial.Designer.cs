@@ -34,9 +34,10 @@
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.armazemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.armazemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.armazenarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,30 +88,38 @@
             // cadastrarToolStripMenuItem1
             // 
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
-            // 
-            // armazemToolStripMenuItem
-            // 
-            this.armazemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buscarToolStripMenuItem2});
-            this.armazemToolStripMenuItem.Name = "armazemToolStripMenuItem";
-            this.armazemToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.armazemToolStripMenuItem.Text = "Armazem";
-            // 
-            // buscarToolStripMenuItem2
-            // 
-            this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
-            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(109, 22);
-            this.buscarToolStripMenuItem2.Text = "Buscar";
             // 
             // listarToolStripMenuItem1
             // 
             this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.listarToolStripMenuItem1.Text = "Listar";
             this.listarToolStripMenuItem1.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
+            // 
+            // armazemToolStripMenuItem
+            // 
+            this.armazemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.armazenarToolStripMenuItem,
+            this.buscarToolStripMenuItem});
+            this.armazemToolStripMenuItem.Name = "armazemToolStripMenuItem";
+            this.armazemToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.armazemToolStripMenuItem.Text = "Armazem";
+            // 
+            // armazenarToolStripMenuItem
+            // 
+            this.armazenarToolStripMenuItem.Name = "armazenarToolStripMenuItem";
+            this.armazenarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.armazenarToolStripMenuItem.Text = "Armazenar";
+            this.armazenarToolStripMenuItem.Click += new System.EventHandler(this.armazenarToolStripMenuItem_Click);
+            // 
+            // buscarToolStripMenuItem
+            // 
+            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem.Text = "Buscar";
             // 
             // TelaInicial
             // 
@@ -137,8 +146,9 @@
         private System.Windows.Forms.ToolStripMenuItem itensToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem armazemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem armazenarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
     }
 }

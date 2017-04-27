@@ -11,7 +11,6 @@ namespace Controller
     public class ProdutoController
     {
        
-
         public static void Salvar(Produto prod)
         {
             using (Contexto ctx = new Contexto())
@@ -61,9 +60,8 @@ namespace Controller
         {
             using(Contexto ctx = new Contexto())
             {
-                List<Produto> retornaProdutos = new List<Produto>();
-                retornaProdutos = ctx.Produtos.ToList();
-                return retornaProdutos;
+                
+                return ctx.Produtos.ToList();
             }
         }
 

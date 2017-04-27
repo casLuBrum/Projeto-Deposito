@@ -15,6 +15,7 @@ namespace Model.DAL
         }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Armazenar> Armazenar { get; set; }
 
     }
 
