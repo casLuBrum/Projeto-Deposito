@@ -17,10 +17,6 @@ namespace Model
 
         [Required]
         public double Peso { get; set; }
-        //[Required]
-        //public int Prateleira { get; set; }
-        //[Required]
-        //public int Coluna { get; set; }
 
     }
 }

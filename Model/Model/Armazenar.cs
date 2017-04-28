@@ -13,10 +13,10 @@ namespace Model
         public int ArmazenarID { get; set; }
 
         public int ClienteID { get; set; }
-        public virtual Cliente _Cliente { get; set; }
+        //public virtual Cliente _Cliente { get; set; }
 
         public int ProdutoID { get; set; }
-        public virtual Produto _Produto { get; set; }
+        //public virtual Produto _Produto { get; set; }
 
         public int Prateleira { get; set; }
 

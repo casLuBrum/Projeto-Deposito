@@ -77,7 +77,7 @@
             this.ClientSize = new System.Drawing.Size(247, 355);
             this.Controls.Add(this.dgv_Clientes);
             this.Name = "FrmListarClientes";
-            this.Text = "FrmListarClientes";
+            this.Text = "Lista de Clientes";
             this.Load += new System.EventHandler(this.FrmListarClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clientes)).EndInit();
             this.ResumeLayout(false);

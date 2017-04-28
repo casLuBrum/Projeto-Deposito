@@ -19,10 +19,10 @@ namespace Views
 
         public FrmArmazenar1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
+        //Limpando Campos
         public void LimparCampos()
         {
             Prateleira_txt.Clear();
@@ -37,6 +37,7 @@ namespace Views
 
             cb_Cliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_Cliente.DataSource = cliContr.Listar();
+            cb_Cliente.ValueMember = "ClienteID";
             cb_Cliente.DisplayMember = "Nome";
             cb_Cliente.Update();
         }
@@ -47,10 +48,11 @@ namespace Views
 
             cb_Itens.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_Itens.DataSource = prodContr.Listar();
+            cb_Itens.ValueMember = "ProdutoID";
             cb_Itens.DisplayMember = "Nome";
             cb_Itens.Update();
         }
-
+                
         private void FrmArmazenar1_Load(object sender, EventArgs e)
         {
             CarregarCbClientes();
@@ -59,8 +61,10 @@ namespace Views
 
         private void cb_Itens_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cb_Itens.SelectedIndex > 0)
-            idSelecItem = Convert.ToInt32(cb_Itens.SelectedValue);
+            if (cb_Itens.SelectedIndex > 0)
+            {            
+                idSelecItem = Convert.ToInt32(cb_Itens.SelectedValue);
+            }
         }
 
         private void cb_Cliente_SelectedIndexChanged(object sender, EventArgs e)

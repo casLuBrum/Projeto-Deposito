@@ -19,5 +19,25 @@ namespace Controller
                 ctx.SaveChanges();
             }
         }
+
+        //public static Armazenar BuscarPorCodigo(int id, Contexto ctx)
+        
+
+        public Armazenar RetornaBusca(int id)
+        {
+            using (Contexto ctx = new Contexto())
+            {    
+                return ctx.Armazenar.Find(id);
+            }
+        }
+
+
+        public List<Armazenar> Listar()
+        {
+            using (Contexto ctx = new Contexto())
+            {
+                return ctx.Armazenar.ToList();
+            }
+        }
     }
 }

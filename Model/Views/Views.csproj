@@ -61,6 +61,12 @@
     <Compile Include="FrmArmazenar1.Designer.cs">
       <DependentUpon>FrmArmazenar1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarNoArmazem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarNoArmazem.Designer.cs">
+      <DependentUpon>FrmBuscarNoArmazem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +112,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmArmazenar1.resx">
       <DependentUpon>FrmArmazenar1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarNoArmazem.resx">
+      <DependentUpon>FrmBuscarNoArmazem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastrarCliente.resx">
       <DependentUpon>FrmCadastrarCliente.cs</DependentUpon>

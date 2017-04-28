@@ -51,5 +51,12 @@ namespace Views
             armazemar.MdiParent = this;
             armazemar.Show();
         }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBuscarNoArmazem BuscarArm = new FrmBuscarNoArmazem();
+            BuscarArm.MdiParent = this;
+            BuscarArm.Show();
+        }
     }
 }
