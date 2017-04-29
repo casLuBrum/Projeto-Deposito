@@ -54,6 +54,8 @@
     <Compile Include="Armazenar.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Interface_Cliente.cs" />
+    <Compile Include="interface_Produto.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
