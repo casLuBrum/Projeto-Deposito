@@ -14,7 +14,8 @@ namespace Views
 {
     public partial class FrmBuscarNoArmazem : Form
     {
-        Armazenar local = new Armazenar();
+        //Armazenar local = new Armazenar();
+        List<Armazenar> local = new List<Armazenar>();
 
         public FrmBuscarNoArmazem()
         {
@@ -26,7 +27,7 @@ namespace Views
         {
             ArmazenarController armContr = new ArmazenarController();
 
-            local = armContr.RetornaBusca(Convert.ToInt32(Codigo_txt.Text));
+            local.Add(armContr.RetornaBusca(Convert.ToInt32(Codigo_txt.Text)));
 
             if (local != null)
             {
@@ -42,7 +43,9 @@ namespace Views
         public void CarregarGridViewBusca()
         {
             //ArmazenarController armContr = new ArmazenarController();
-            dgv_Busca.DataSource = local.ToString();
+            dgv_Busca.DataSource = null;
+            dgv_Busca.DataSource = local;
+            dgv_Busca.Refresh();
             //dgv_Busca.DataSource = armContr.Listar();
             
         }
